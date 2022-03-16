@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/styles.css'>
+</head>
+
+<body>
+    {{>header}}
+    {{#each list}}
+    <li><a href="/page/{{this}}">{{this}}</a></li>
+    {{/each}}
+    <br/>
+    <a href = '/page/create'>create</a>
+    <a href = '/page'>page</a>
+    <h2>{{title}}</h2>
+    <img src = "/images/hello.jpg" style = "width: 300px; display: block; margin-top: 10px"/>
+    {{>footer}}
+</body>
+
+</html>

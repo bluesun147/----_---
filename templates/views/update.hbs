@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB1 - {{title}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/styles.css'>
+</head>
+
+<body>
+    {{>header}}
+    {{#each list}}
+    <li><a href="/page/{{this}}">{{this}}</a></li>
+    {{/each}}
+
+    <br />
+    <form action="/page/update_process" method="post">
+        <input type="hidden" name="id" value="{{title}}">
+        <!-- update_process로 정보 전송. get할때는 쿼리스트링(?title=aa), 생성, 수정, 삭제 => 보이지 않는 방식 method="post". 안쓰면 기본 get -->
+        <p><input type="text" placeholder="title" name="title" value={{title}}></p>
+        <p>
+            <textarea placeholder="description" name='description'>{{description}}</textarea>
+        </p>
+
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+    {{>footer}}
+</body>
+
+</html>

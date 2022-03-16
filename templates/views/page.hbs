@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/styles.css'>
+</head>
+
+<body>
+    {{>header}}
+    {{#each list}}
+    <li><a href="/page/{{this}}">{{this}}</a></li>
+    {{/each}}
+    <br/>
+    <a href = '/page/create'>create</a>
+    {{>footer}}
+</body>
+
+</html>

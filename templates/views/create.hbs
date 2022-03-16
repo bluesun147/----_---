@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/css/styles.css'>
+</head>
+
+<body>
+    {{>header}}
+    {{#each list}}
+    <li><a href="/page/{{this}}">{{this}}</a></li>
+    {{/each}}
+
+    <form action = "/page/create_process" method="post">
+    <!-- create_process로 정보 전송. get할때는 쿼리스트링(?title=aa), 생성, 수정, 삭제 => 보이지 않는 방식 method="post". 안쓰면 기본 get -->
+      <p><input type = "text" placeholder = "title" name = "title"></p>
+      <p>
+          <textarea placeholder = "description" name = 'description'></textarea>
+      </p>
+  
+      <p>
+          <input type="submit">
+      </p>
+    </form>
+    {{>footer}}
+</body>
+
+</html>
